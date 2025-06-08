@@ -1,0 +1,24 @@
+name: Cypherverse Crypto Alerts
+
+on:
+  schedule:
+    - cron: '30 12 * * 1-5'  # 7:30 AM CST Mon–Fri
+    - cron: '00 15 * * 1-5'  # 10:00 AM CST Mon–Fri
+    - cron: '30 19 * * 1-5'  # 2:30 PM CST Mon–Fri
+    - cron: '00 23 * * 0'    # 6:00 PM CST Sunday (weekly)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        pip install requests
+        pip install python-telegram-bot
+    - name: Run crypto alert
+      run: python crypto_alert.py
