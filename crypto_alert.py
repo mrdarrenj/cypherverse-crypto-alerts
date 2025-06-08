@@ -8,7 +8,7 @@ import pytz
 from telegram import Bot
 
 # Load Telegram credentials from GitHub Secrets
-TELEGRAM_BOT_TOKEN = os.environ.get("8014356272:AAFSjvoLLooWP4LOroXVNAD0Toj8EWA0zDQ")
+TELEGRAM_BOT_TOKEN = os.environ.get("8018409461:AAEvnjpkSSa482DHbnuNb_dLfukla_EJoVU")
 TELEGRAM_USER_ID = os.environ.get("6584100075")
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN)
